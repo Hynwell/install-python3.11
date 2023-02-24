@@ -26,15 +26,20 @@ if [[ "$inpy" == "y" ]]; then
     make -j $(nproc)
     sudo make altinstall
 
+    # Cделать Python3.11 по умолчанию
+    sudo ln -s /usr/local/bin/python
+    sudo ln -s /usr/local/bin/python3.11 /usr/local/bin/python
+
     # Удаление исходников
     cd ~/
     sudo rm -rf ~/download/Python-3.11.1.tgz ~/download/Python-3.11.1
 
     echo "---THE END---"
-    python3.11 --version
-    
+    python3.11 -V
+    pip3.11 -V
+
 elif [[ "$inpy" == "n" ]]; then
     echo "Отмена установки Python"
 else
-  echo "Выбранно не верное значение -> Отмена установки Python"
+  echo "Выбранно не верное значение -> отмена установки Python"
 fi
