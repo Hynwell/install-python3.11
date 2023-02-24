@@ -16,6 +16,7 @@ if [[ "$inpy" == "y" ]]; then
         done
     
     # Скачиваем файлы python3.11
+    mkdir -p ~/download
     curl -o ~/download/Python-3.11.1.tgz https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tgz
     tar -xf ~/download/Python-3.11.1.tgz -C ~/download/
 
